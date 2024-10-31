@@ -187,13 +187,18 @@
 
 /*Email or username input, this also applies to other fields in Authentik */
 
-.pf-c-form-control,
+/* Email input */
+.pf-c-form-control {
+    opacity: 0.785; 
+    border-radius: 20px 20px 20px 20px; 
+    border: 2px solid #3a3a40 !important; 
+}
+
+/* Password input */
 .pf-c-input-group {
     opacity: 0.785; 
     border-radius: 20px 20px 20px 20px; 
-    border: 2px solid #3a3a40; 
 }
-
 .pf-c-title {
     color: var(--ak-dark-foreground);
 }
