@@ -1,10 +1,9 @@
-/* Yip Yip Bitches */
-
 :root {
     --ak-accent: #3a3a40;
     --pf-global--primary-color--100: #3a3a40;
     --pf-global--primary-color--200: #3a3a40;
     --pf-global--primary-color--400: var(--ak-accent);
+    --pf-c-form-control--BorderRadius: 20px;
   }
 
 
@@ -32,7 +31,7 @@
 }
 
 .pf-c-login__main {
-    animation: pulse-border 3s infinite; 
+    animation: pulse-border 3s infinite; /* added this */
 }
 
 
@@ -86,23 +85,34 @@
     display: flex;
     justify-content: center; /* Centers the text horizontally */
     align-items: center; /* Centers the text vertically */
-    width: 100%; /* If you change this it will be ugly */
+    width: 90%; /* If you change this it will be ugly */
+    margin: 0 auto !important; /* Centers the box horizontally */
 }
 
 
+.pf-c-button.pf-m-secondary.ak-stage-authenticator-validate-webauthn:hover,
+.pf-c-button.pf-m-primary.ak-stage-authenticator-validate-webauthn:hover,
+.pf-c-button.pf-m-block.ak-stage-authenticator-validate-code:hover,
+.pf-c-button.pf-m-primary.ak-stage-identification:hover,
+.pf-c-button.pf-m-block.ak-stage-identification:hover,
 .pf-c-button.pf-m-link:hover,
 .pf-c-button.pf-m-block:hover {
     box-shadow: 0 0 5px 3px #d6d6d6; /* Animated glowing aura on hover */
 }
 
-.pf-c-button.pf-m-block {
-    margin-top: 6px !important;
-    margin-bottom: 6px !important;
-}
+/* Provider Icons */
 
 
 
-/* Login button */
+
+
+
+
+    white-space: normal; /* Allows text to wrap */
+    word-wrap: break-word; /* Breaks long words if necessary */
+    font-size: 14px; /* Adjusts the font size */
+    padding: 10px 15px; /* Adjusts padding for better spacing */
+    text-align: center; /* Centers the text *//* Login buttons */
 
 .pf-c-button.pf-m-block {
     --pf-c-button--disabled--BackgroundColor: var(--pf-c-button--m-link--disabled--BackgroundColor);
@@ -113,12 +123,44 @@
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
     width: 50%; /* Set the width you desire */
     margin: 0 auto; /* Centers the box horizontally */
+    padding-top: 5px;    /* Adjust the value as needed */
+    padding-bottom: 5px; /* Adjust the value as needed */
+}
+
+.pf-c-button.pf-m-block.ak-stage-authenticator-validate-code,
+.pf-c-form__group.pf-m-action.ak-stage-authenticator-validate-code {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    /* Add padding to create space above and below the buttons */
+    padding-top: 16px;    /* Adjust the value as needed */
+    padding-bottom: 16px; /* Adjust the value as needed */
+}
+
+.pf-c-button.pf-m-secondary.ak-stage-authenticator-validate-webauthn,
+.pf-c-button.pf-m-primary.ak-stage-authenticator-validate-webauthn,
+.pf-c-button.pf-m-block.ak-stage-authenticator-validate-code,
+.pf-c-button.pf-m-primary.ak-stage-identification,
+.pf-c-button.pf-m-block.ak-stage-identification {
+    display: block;
+    margin: 6px auto !important; /* Centers the box horizontally */
+    border-radius: 20px 20px 20px 20px;
+    width: 50%; /* Sets the button's width to 50% */
+    white-space: normal; /* Allows text to wrap */
+    word-wrap: break-word; /* Breaks long words if necessary */
+    font-size: 16px; /* Adjusts the font size */
+    padding: 10px 15px; /* Adjusts padding for better spacing */
+    text-align: center; /* Centers the text */
+    box-sizing: border-box; /* Includes padding within the width */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    padding-top: 5px;    /* Adjust the value as needed */
+    padding-bottom: 5px; /* Adjust the value as needed */
 }
 
 
 
-
-
+/*** flows ***/
 .pf-c-background-image {
   --pf-c-background-image--Filter: none;
 }
@@ -129,7 +171,7 @@
     font-size: var(--pf-c-title--m-3xl--FontSize);
     font-weight: var(--pf-c-title--m-3xl--FontWeight);
     line-height: var(--pf-c-title--m-3xl--LineHeight);
-    text-align: center; 
+    text-align: center; /* added this */
 }
 
 
@@ -139,7 +181,7 @@
     display: flex;
     flex-wrap: wrap;
     list-style: none;
-    visibility: hidden; 
+    visibility: hidden; /* added this */
 }
 
 
@@ -176,8 +218,8 @@
   background-color: var(--ak-dark-background);
 }
 .pf-c-form__label-text {
-    border-radius: 20px 20px 20px 20px; 
-    opacity: 0.60; 
+    border-radius: 20px 20px 20px 20px; /* added this */
+    opacity: 0.60; /* added this */
     color: var(--ak-dark-foreground);
 }
 
@@ -187,16 +229,17 @@
 
 /*Email or username input, this also applies to other fields in Authentik */
 
-/* Email input */
+
+
 .pf-c-form-control {
-    border-radius: 20px 20px 20px 20px; 
-    border: 2px solid #3a3a40 !important; 
+    border-radius: 20px 20px 20px 20px !important; /* added this */
+    border: 2px solid #3a3a40 !important; /* added this */
 }
 
-/* Password input */
 .pf-c-input-group {
-    border-radius: 20px 20px 20px 20px; 
+    border-radius: 20px 20px 20px 20px !important; /* added this */
 }
+
 .pf-c-title {
     color: var(--ak-dark-foreground);
 }
@@ -209,6 +252,12 @@
   }
 }
 
+
+
+
+
+
+/*** user interface ***/
 .header input {
   border-bottom-color: var(--pf-global--primary-color--100);
 }
@@ -221,7 +270,7 @@ a,
 body,
 h1,
 h2,
-.pf-c-expandable-section__toggle, /* More details tab in app card */
+.pf-c-expandable-section__toggle, /* More details tab under application */
 .pf-c-page__header-tools, /* Username in top right of application menu */
 .pf-c-button /* Cant remember */{
     color: #b7b7b7 !important;
